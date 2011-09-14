@@ -64,9 +64,14 @@ function http_request(
     while ($line = fgets($fp)) $ret .= $line;
     fclose($fp);
    
-    if (!$res_hdr)
-        $ret = substr($ret, strpos($ret, "\r\n\r\n") + 4);
-   
+    if (!$res_hdr) {
+		  $startpos=strpos($ret, "\r\n\r\n");
+		  if ($startpos<0) {
+			$startpos=strpos($ret,"\n\n"); 
+		  }
+        $ret = substr($ret, strpos($ret, $startpos + 4);
+  	 } 
+    
     return $ret;
 }
 ?> 
