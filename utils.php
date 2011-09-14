@@ -61,7 +61,7 @@ function http_request(
     stream_set_timeout($fp, 0, $timeout * 1000);
    
     fputs($fp, $req);
-    while (($line = fgets($fp)) && $line!=0) $ret .= $line;
+    while ($line = fgets($fp)) $ret .= $line;
     fclose($fp);
    
     if (!$res_hdr) {
