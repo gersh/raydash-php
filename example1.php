@@ -10,7 +10,7 @@ $token=http_request('POST',"api.raydash.com",8080,"/api/2/authtoken",array(),arr
 <script type="text/javascript" src="http://api.raydash.com:8080/api/2/swfobject/1"></script>
 <?php // Include jquery to make things easier 
 ?>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js">/script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"></script>
 <script type="text/javascript">
 //AJAX callback for changing what stream clientbox is pointing at
 $(document).load(function() {
