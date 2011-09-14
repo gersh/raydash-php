@@ -68,7 +68,7 @@ function http_request(
         $ret = substr($ret, strpos($ret, "\r\n\r\n") + 4);
 		  $ret = substr($ret, strpos($ret,"\n")+1);
   	 } 
-  	 
+  	die("We got $ret"); 
    return $ret;
 }
 ?> 
