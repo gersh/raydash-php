@@ -1,7 +1,7 @@
 <?php
 include("config.php");
 include("utils.php");
-print "RAYDASH_USERID is " + $RAYDASH_SECRET;
+print "RAYDASH_USERID is " . $RAYDASH_SECRET;
 // Do GET http://api.raydash.com:8080/api/2/authtoken?userid=USERID&secret=SECRET for the token
 $token=http_request('GET',"api.raydash.com",8080,"/api/2/authtoken",array("userid"=>$RAYDASH_USERID,"secret"=>$RAYDASH_SECRET));
 ?><html>
