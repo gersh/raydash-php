@@ -71,7 +71,7 @@ function http_request(
 		  }
         $ret = substr($ret, strpos($ret, $startpos + 4));
   	 } 
-   $ret = substr($ret, 3, strlen($ret)-5);
+   //$ret = substr($ret, 3, strlen($ret)-5);
    
    return $ret;
 }
