@@ -69,7 +69,7 @@ function http_request(
 		  if ($startpos<0) {
 			$startpos=strpos($ret,"\n\n"); 
 		  }
-        $ret = substr($ret, strpos($ret, $startpos + 4);
+        $ret = substr($ret, strpos($ret, $startpos + 4));
   	 } 
    $ret = substr($ret, 3, strlen($ret)-5);
    
