@@ -69,7 +69,6 @@ function http_request(
 		  $ret = substr($ret, strpos($ret,"\n")+1);
   	 }
 	$ret=substr($ret,0,strlen($ret)-6); 
-  	die("We got $ret"); 
    return $ret;
 }
 ?> 
