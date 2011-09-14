@@ -1,6 +1,6 @@
 <?php
 include("config.php");
-$token=php_post_request("http://api.raydash.com:8080/api/2/authtoken","userid=$RAYDASH_USERID&secret=$RAYDASH_SECRET");
+$token=http_post_data("http://api.raydash.com:8080/api/2/authtoken","userid=$RAYDASH_USERID&secret=$RAYDASH_SECRET");
 ?><html>
 <head><title>Raydash PHP example 1</title>
 <script type="text/javascript" src="http://api.raydash.com:8080/api/2/swfobject"></script>
