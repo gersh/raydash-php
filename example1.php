@@ -15,11 +15,11 @@ $token=http_request('POST',"api.raydash.com",8080,"/api/2/authtoken",array(),arr
 //AJAX callback for changing what stream clientbox is pointing at
 $(document).load(function() {
 	$("tokenBtn").click(function() {
-		$.ajax({url:"connect.php",data:{myToken:"<?php print $token ?>",otherToken:$("#tokenTxt").val()}});
+		$.ajax({url:"connect.php",data:{myToken:"<?php echo $token ?>",otherToken:$("#tokenTxt").val()}});
 	});
 });
 // Emebed the flash file in the streambox div for playing video
-swfobject.embedSWF("http://api.raydash.com:8080/api/2/clientbox/1","streambox",640,480,"9.0.0","http://www.adobe.com/products/flashplayer/download",{autostart:1,token:"<?php print $token; ?>"},{allowscriptaccess:'always'},{});
+swfobject.embedSWF("http://api.raydash.com:8080/api/2/clientbox/1","streambox",640,480,"9.0.0","http://www.adobe.com/products/flashplayer/download",{autostart:1,token:"<?php echo $token; ?>"},{allowscriptaccess:'always'},{});
 // Emebed the flash file for recording from our webcam
 swfobject.embedSWF("http://api.raydash.com:8080/api/2/recordbox/2","recordbox",640,480,"10.3.0","http://www.adobe.com/products/flashplayer/download",{autostart:1,token:"<?php print $token; ?>"},{allowscriptaccess:'always'},{});
 </script>
