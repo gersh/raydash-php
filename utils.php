@@ -65,7 +65,7 @@ function http_request(
     fclose($fp);
    
     if (!$res_hdr) {
-		  $startpos=strrpos($ret, "\r\n\r\n");
+		  $startpos=strpos($ret, "\r\n\r\n");
         $ret = substr($ret, strpos($ret, $startpos + 4));
   	 } 
    
