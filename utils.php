@@ -66,8 +66,9 @@ function http_request(
    
     if (!$res_hdr) {
         $ret = substr($ret, strpos($ret, "\r\n\r\n") + 4);
+		  $ret = substr($ret, strpos($ret,"\r\n")+1);
   	 } 
-   
+  	 
    return $ret;
 }
 ?> 
