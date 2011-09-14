@@ -2,7 +2,7 @@
 include("config.php");
 include("utils.php");
 // Do GET http://api.raydash.com:8080/api/2/authtoken?userid=USERID&secret=SECRET for the token
-$token=http_request('GET',"api.raydash.com",8080,"/api/2/authtoken",array("userid"=>$RAYDASH_USERID,"secret"=>$RAYDASH_SECRET));
+$token=http_request('POST',"api.raydash.com",8080,"/api/2/authtoken",array(),array("userid"=>$RAYDASH_USERID,"secret"=>$RAYDASH_SECRET));
 ?><html>
 <head><title>Raydash PHP example 1</title>
 <?php // Include a Javascript file for embedding flash files 
