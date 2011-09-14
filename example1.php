@@ -1,7 +1,6 @@
 <?php
 include("config.php");
 include("utils.php");
-print "RAYDASH_USERID is " . getenv('RAYDASH_SECRET');
 // Do GET http://api.raydash.com:8080/api/2/authtoken?userid=USERID&secret=SECRET for the token
 $token=http_request('GET',"api.raydash.com",8080,"/api/2/authtoken",array("userid"=>$RAYDASH_USERID,"secret"=>$RAYDASH_SECRET));
 ?><html>
@@ -26,6 +25,7 @@ swfobject.embedSWF("http://api.raydash.com:8080/api/2/recordbox/2","recordbox",6
 </script>
 </head>
 <body>
+<?php print getenv('RAYDASH_SECRET'); ?>
 <p>Your token is: <?php print $token; ?></p>
 <label>Enter someone's token to see them</label><input type="text" id="tokenTxt"/><input type="button" id="tokenBtn"/><br/>
 <div id="streambox"></div>
