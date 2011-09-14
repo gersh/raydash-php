@@ -14,7 +14,7 @@ $token=http_request('POST',"api.raydash.com",8080,"/api/2/authtoken",array(),arr
 <script type="text/javascript">
 //AJAX callback for changing what stream clientbox is pointing at
 $(document).load(function() {
-	$("tokenBtn").click(function() {
+	$("#tokenBtn").click(function() {
 		$.ajax({url:"connect.php",data:{myToken:"<?php echo $token ?>",otherToken:$("#tokenTxt").val()}});
 	});
 });
@@ -26,7 +26,7 @@ swfobject.embedSWF("http://api.raydash.com:8080/api/2/recordbox/2","recordbox",6
 </head>
 <body>
 <p>Your token is: <?php echo $token; ?></p>
-<label>Enter someone's token to see them</label><input type="text" id="tokenTxt"/><input type="button" id="tokenBtn"/><br/>
+<label>Enter someone's token to see them</label><input type="text" id="tokenTxt"/><input type="button" id="tokenBtn" value="connect"/><br/>
 <div id="streambox"></div>
 <div id="recordbox"></div>
 </body>
