@@ -61,17 +61,13 @@ function http_request(
     stream_set_timeout($fp, 0, $timeout * 1000);
    
     fputs($fp, $req);
-    while ($line = fgets($fp)) $ret .= $line;
+    while (($line = fgets($fp)) && $line!=0) $ret .= $line;
     fclose($fp);
    
     if (!$res_hdr) {
-		  $startpos=strpos($ret, "\r\n\r\n");
-		  if ($startpos<0) {
-			$startpos=strpos($ret,"\n\n"); 
-		  }
+		  $startpos=strrpos($ret, "\r\n\r\n");
         $ret = substr($ret, strpos($ret, $startpos + 4));
   	 } 
-   //$ret = substr($ret, 3, strlen($ret)-5);
    
    return $ret;
 }
